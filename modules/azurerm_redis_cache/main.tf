@@ -1,0 +1,16 @@
+resource "azurerm_redis_cache" "redis_cache" {
+  name                = var.name
+  resource_group_name = var.resource_group_name
+  location            = var.location
+  capacity            = var.capacity
+  family              = var.family
+  sku_name            = var.sku_name
+  zones               = var.zones
+  subnet_id           = var.subnet_id
+  tags                = var.tags
+
+  # Security baseline
+  minimum_tls_version           = "1.2"
+  non_ssl_port_enabled          = false
+  public_network_access_enabled = var.public_network_access_enabled
+}

@@ -13,7 +13,7 @@ resource "azurerm_network_interface" "nic" {
   }
 }
 
-resource "azurerm_windows_virtual_machine" "this" {
+resource "azurerm_windows_virtual_machine" "windows_vm" {
   name                  = var.name
   computer_name         = substr(var.name, 0, 15)
   resource_group_name   = var.resource_group_name
